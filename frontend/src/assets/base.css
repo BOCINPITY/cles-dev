@@ -5,3 +5,13 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --main-text-color: #000000;
+  --sub-text-color: #666666;
+  --primary-button-color: #000000;
+  --secondary-button-color: #e0e0ff;
+  --link-color: #000000;
+  --link-hover-color: #e0e0ff;
+  --button-hover-color: #0077ff;
+}
