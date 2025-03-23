@@ -42,11 +42,11 @@
 </template>
 
 <script setup lang="ts">
-import router from '@/router'
+import router from "@/router";
 
 const start = () => {
-  router.push('/SystemView')
-}
+  router.push("/cles-dev/SystemView");
+};
 </script>
 
 <style scoped>
@@ -77,7 +77,7 @@ const start = () => {
 }
 
 .hero {
-  background-image: url('https://p3-flow-imagex-sign.byteimg.com/ocean-cloud-tos/image_generation/698c6b92200ce778c6d504711ddad14a_1741676559693567649.jpeg~tplv-a9rns2rl98-image.jpeg?rk3s=25bff839&x-expires=1773212559&x-signature=qGR6OZo4EXnztqMSLEtyOP8gHf4%3D');
+  background-image: url("https://p3-flow-imagex-sign.byteimg.com/ocean-cloud-tos/image_generation/698c6b92200ce778c6d504711ddad14a_1741676559693567649.jpeg~tplv-a9rns2rl98-image.jpeg?rk3s=25bff839&x-expires=1773212559&x-signature=qGR6OZo4EXnztqMSLEtyOP8gHf4%3D");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -127,7 +127,7 @@ const start = () => {
   width: 100px;
   height: 100px;
   background-color: #f0f0f0;
-  background-image: url('https://p9-flow-imagex-sign.byteimg.com/ocean-cloud-tos/image_generation/de0657782dc01c396884b7c85532bcb9_1741676433461770969.jpeg~tplv-a9rns2rl98-image.jpeg?rk3s=25bff839&x-expires=1773212433&x-signature=J7fV4VQyU8nKx1yuBx3h6RZaZEs%3D');
+  background-image: url("https://p9-flow-imagex-sign.byteimg.com/ocean-cloud-tos/image_generation/de0657782dc01c396884b7c85532bcb9_1741676433461770969.jpeg~tplv-a9rns2rl98-image.jpeg?rk3s=25bff839&x-expires=1773212433&x-signature=J7fV4VQyU8nKx1yuBx3h6RZaZEs%3D");
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease;
@@ -137,7 +137,7 @@ const start = () => {
   width: 100px;
   height: 100px;
   background-color: #f0f0f0;
-  background-image: url('https://p3-flow-imagex-sign.byteimg.com/ocean-cloud-tos/image_generation/82f7e943302c25dcd2668412559bbfc2_1741676521967071416.jpeg~tplv-a9rns2rl98-image.jpeg?rk3s=25bff839&x-expires=1773212522&x-signature=OUM6LPQy0VbclS1JIy1bHiuVKtw%3D');
+  background-image: url("https://p3-flow-imagex-sign.byteimg.com/ocean-cloud-tos/image_generation/82f7e943302c25dcd2668412559bbfc2_1741676521967071416.jpeg~tplv-a9rns2rl98-image.jpeg?rk3s=25bff839&x-expires=1773212522&x-signature=OUM6LPQy0VbclS1JIy1bHiuVKtw%3D");
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease;
@@ -147,7 +147,7 @@ const start = () => {
   width: 100px;
   height: 100px;
   background-color: #f0f0f0;
-  background-image: url('https://p9-flow-imagex-sign.byteimg.com/ocean-cloud-tos/image_generation/54864213467edcaf9f485721042361ba_1741676537082617644.jpeg~tplv-a9rns2rl98-image.jpeg?rk3s=25bff839&x-expires=1773212537&x-signature=ha9ZXKn4bWuNPpp4OaLfA66nGAk%3D');
+  background-image: url("https://p9-flow-imagex-sign.byteimg.com/ocean-cloud-tos/image_generation/54864213467edcaf9f485721042361ba_1741676537082617644.jpeg~tplv-a9rns2rl98-image.jpeg?rk3s=25bff839&x-expires=1773212537&x-signature=ha9ZXKn4bWuNPpp4OaLfA66nGAk%3D");
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease;
@@ -202,7 +202,7 @@ const start = () => {
 }
 
 .feature-list li::before {
-  content: '✓';
+  content: "✓";
   margin-right: 10px;
   color: var(--primary-button-color);
 }
@@ -211,7 +211,7 @@ const start = () => {
   width: 45%;
   height: 300px;
   background-color: #f0f0f0;
-  background-image: url('https://p3-flow-imagex-sign.byteimg.com/ocean-cloud-tos/image_generation/cd9623c20d45bbc713cc4963d1497878_1741676569049154135.jpeg~tplv-a9rns2rl98-image.jpeg?rk3s=25bff839&x-expires=1773212569&x-signature=a68ifjODqgC8EclaUNWWyYlWZx4%3D');
+  background-image: url("https://p3-flow-imagex-sign.byteimg.com/ocean-cloud-tos/image_generation/cd9623c20d45bbc713cc4963d1497878_1741676569049154135.jpeg~tplv-a9rns2rl98-image.jpeg?rk3s=25bff839&x-expires=1773212569&x-signature=a68ifjODqgC8EclaUNWWyYlWZx4%3D");
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease;
@@ -225,7 +225,7 @@ const start = () => {
   width: 45%;
   height: 300px;
   background-color: #f0f0f0;
-  background-image: url('https://p9-flow-imagex-sign.byteimg.com/ocean-cloud-tos/image_generation/5247eb0d8bf1f68ec2604b4b93b91073_1741676579771426625.jpeg~tplv-a9rns2rl98-image.jpeg?rk3s=25bff839&x-expires=1773212579&x-signature=Ez9PgFO50n3nkXJKOxYWC7zZmTQ%3D');
+  background-image: url("https://p9-flow-imagex-sign.byteimg.com/ocean-cloud-tos/image_generation/5247eb0d8bf1f68ec2604b4b93b91073_1741676579771426625.jpeg~tplv-a9rns2rl98-image.jpeg?rk3s=25bff839&x-expires=1773212579&x-signature=Ez9PgFO50n3nkXJKOxYWC7zZmTQ%3D");
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease;

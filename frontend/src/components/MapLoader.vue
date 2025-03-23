@@ -21,7 +21,7 @@
 import router from "@/router";
 import uploadIcon from "../assets/bg01.png";
 const noMap = () => {
-  router.push("/SystemView/editor");
+  router.push("/cles-dev/SystemView/editor");
 };
 </script>
 

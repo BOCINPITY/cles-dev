@@ -2,7 +2,7 @@
   <el-container>
     <el-aside width="200px">
       <el-menu :default-active="activeMenu" class="el-menu-vertical">
-        <RouterLink to="/SystemView">
+        <RouterLink to="/cles-dev/SystemView">
           <el-menu-item index="1">
             <template #title>
               <el-icon><House /></el-icon>
@@ -10,7 +10,7 @@
             </template>
           </el-menu-item>
         </RouterLink>
-        <RouterLink to="/SystemView/editor">
+        <RouterLink to="/cles-dev/SystemView/editor">
           <el-menu-item index="2">
             <el-icon><Edit /></el-icon>
             <template #title>Map Editor</template>
@@ -34,9 +34,9 @@ const router = useRouter();
 watchEffect(() => {
   const routers = router.currentRoute.value.matched;
   activeMenu.value = router.currentRoute.value.path;
-  if (activeMenu.value === "/SystemView") {
+  if (activeMenu.value === "/cles-dev/SystemView") {
     activeMenu.value = "1";
-  } else if (activeMenu.value === "/SystemView/editor") {
+  } else if (activeMenu.value === "/cles-dev/SystemView/editor") {
     activeMenu.value = "2";
   }
 });
