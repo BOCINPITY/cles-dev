@@ -13,7 +13,8 @@ const router = createRouter({
       component: () => import('@/views/SystemView.vue'),
       children: [
         {
-          path: 'home',
+
+          path: '',
           component: () => import('@/views/SystemChildViews/SystemHome.vue'),
         },
         {

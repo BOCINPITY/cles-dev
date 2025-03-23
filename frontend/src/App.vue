@@ -1,6 +1,6 @@
 <template>
   <el-header>
-    <div class="logo" @click="$router.push('/')">
+    <div class="logo" @click="$router.replace('/')">
       <img src="./assets/logo.png" alt="logo" />
       <span>基于四叉树的路径规划演示系统</span>
     </div>

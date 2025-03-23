@@ -2,7 +2,7 @@
   <div>
     <main>
       <section class="hero">
-        <h1>四叉树路径规划，高效又精准</h1>
+        <h1>基于四叉树路径规划，高效又精准</h1>
         <p>走进四叉树的奇妙世界，体验前所未有的路径规划解决方案。</p>
         <div class="buttons">
           <el-button type="primary" round @click="start">立即开始</el-button>
