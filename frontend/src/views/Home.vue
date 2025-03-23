@@ -45,7 +45,7 @@
 import router from "@/router";
 
 const start = () => {
-  router.push("/cles-dev/SystemView");
+  router.push("/SystemView");
 };
 </script>
 

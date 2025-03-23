@@ -5,11 +5,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/cles-dev',
+      path: '/',
       component: Home,
     },
     {
-      path: '/cles-dev/SystemView',
+      path: '/SystemView',
       component: () => import('@/views/SystemView.vue'),
       children: [
         {
