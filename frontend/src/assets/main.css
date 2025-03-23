@@ -1,2 +1,8 @@
 @import './base.css';
 
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+  height: 100vh;
+  border: 2px solid #00ff77;
+}
