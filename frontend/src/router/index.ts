@@ -1,25 +1,24 @@
-import { createRouter, createWebHistory,createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 
-import Home from '@/views/Home.vue'
+import Index from '@/views/index.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      component: Home,
+      component: Index,
     },
     {
       path: '/SystemView',
-      component: () => import('@/views/SystemView.vue'),
+      component: () => import('@/views/Layout/Layout.vue'),
       children: [
         {
-
           path: '',
-          component: () => import('@/views/SystemChildViews/SystemHome.vue'),
+          component: () => import('@/views/Home/SystemHome.vue'),
         },
         {
           path: 'editor',
-          component: () => import('@/views/SystemChildViews/MapEditor.vue'),
+          component: () => import('@/views/MapEditor/MapEditor.vue'),
         },
       ],
     },

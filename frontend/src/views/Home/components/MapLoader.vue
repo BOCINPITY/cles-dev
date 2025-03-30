@@ -19,7 +19,7 @@
 </template>
 <script lang="ts" setup>
 import router from "@/router";
-import uploadIcon from "../assets/bg01.png";
+import uploadIcon from "@/assets/bg01.png";
 const noMap = () => {
   router.push("/SystemView/editor");
 };

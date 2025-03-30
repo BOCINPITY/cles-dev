@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import MapLoader from "@/components/MapLoader.vue";
+import MapLoader from "./components/MapLoader.vue";
 </script>
 
 <style scoped>
