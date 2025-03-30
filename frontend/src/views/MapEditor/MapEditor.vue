@@ -4,15 +4,20 @@
       <div class="title">地图编辑器</div>
 
       <div class="operation">
-        <el-button type="primary">保存</el-button>
-        <el-button type="danger">清空</el-button>
+        <el-button type="primary" @click="handleSave">保存</el-button>
+        <el-button type="danger" @click="handleReset">清空</el-button>
       </div>
     </div>
     <div class="content">
       <div class="left">
         <p class="decription">基本障碍物</p>
         <div class="shapeList">
-          <div class="shapeItem" v-for="(item, index) in componentShapeList" :key="index">
+          <div
+            class="shapeItem"
+            v-for="(item, index) in componentShapeList"
+            :key="index"
+            @click="handleClick(item)"
+          >
             <i :class="`icon icon-font ${item.icon}`"></i>
             <div class="name">{{ item.name }}</div>
           </div>
@@ -21,89 +26,65 @@
       <div class="editor">
         <div id="cavans"></div>
       </div>
-      <div class="right">
+      <!-- <div class="right">
         <p class="decription">属性</p>
         <div class="attrs">
           <div class="attr-items">
-            <div class="label">标题</div>
-            <el-input></el-input>
-          </div>
-          <div class="attr-items">
-            <div class="label">宽</div>
-            <el-input></el-input>
-          </div>
-          <div class="attr-items">
-            <div class="label">高</div>
-            <el-input></el-input>
-          </div>
-          <div class="attr-items">
             <div class="label">X</div>
-            <el-input></el-input>
+            <el-input
+              v-model="selectedShape.x"
+              @input="updateShapeAttribute('x', $event)"
+            />
           </div>
           <div class="attr-items">
             <div class="label">Y</div>
-            <el-input></el-input>
+            <el-input
+              v-model="selectedShape.y"
+              @input="updateShapeAttribute('y', $event)"
+            />
+          </div>
+          <div class="attr-items">
+            <div class="label">宽</div>
+            <el-input
+              v-model="selectedShape.width"
+              @input="updateShapeAttribute('width', $event)"
+            />
+          </div>
+          <div class="attr-items">
+            <div class="label">高</div>
+            <el-input
+              v-model="selectedShape.height"
+              @input="updateShapeAttribute('height', $event)"
+            />
           </div>
         </div>
-        <p class="decription">外形</p>
-        <div class="attrs">
-          <div class="attr-items">
-            <div class="label">不透明度</div>
-            <el-slider />
-          </div>
-          <div class="attr-items">
-            <div class="label">填充</div>
-            <el-color-picker />
-          </div>
-          <div class="attr-items">
-            <div class="label">边框</div>
-            <el-color-picker />
-          </div>
-          <div class="attr-items">
-            <div class="label">边框宽度</div>
-            <el-input></el-input>
-          </div>
-        </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
-import Konva from "konva";
+import { onMounted, ref, reactive } from "vue";
 import { componentShapeList } from "@/utils/consts";
-const init = () => {
-  const el = document.getElementById("cavans");
-  if (!el) {
-    return;
+import type { IComponentShape } from "@/@types/index";
+import { KonvaJS } from "@/utils/konva";
+const stage = ref<KonvaJS | null>(null);
+
+const handleReset = () => {
+  stage.value?.clearStage();
+};
+const handleSave = () => {
+  const data = stage.value?.stage?.toJSON();
+  console.log("保存数据", JSON.parse(data!), data);
+};
+const handleClick = (el: IComponentShape) => {
+  if (stage.value) {
+    stage.value.addShapeToStage(el);
   }
-  //创建舞台
-  const stage = new Konva.Stage({
-    container: "cavans", // id of container <div>
-    width: 500,
-    height: 500,
-  });
-  //创建图层
-  const layer = new Konva.Layer();
-  //创建矩形
-  const rect = new Konva.Rect({
-    x: 20,
-    y: 20,
-    width: 100,
-    height: 100,
-    fill: "white",
-    stroke: "black",
-    strokeWidth: 4,
-  });
-  //添加矩形到图层
-  layer.add(rect);
-  //添加图层到舞台
-  stage.add(layer);
 };
 
 onMounted(() => {
-  init();
+  stage.value = new KonvaJS("cavans");
 });
 </script>
 
@@ -127,16 +108,16 @@ onMounted(() => {
     margin: 10px 0;
   }
 }
-#cavans {
-  width: 95%;
-  height: 80%;
-  background-color: white;
-}
 .decription {
   font-size: 18px;
   font-weight: lighter;
   padding: 10px;
   background-color: #979797;
+}
+#cavans {
+  width: 90%;
+  height: 80%;
+  background-color: #fff;
 }
 .content {
   border: 1px solid #ccc;

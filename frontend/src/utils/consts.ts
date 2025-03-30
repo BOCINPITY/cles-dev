@@ -18,30 +18,9 @@ export const componentShapeList: IComponentShape[] = [
     type: 'rhombus',
   },
   {
-    name: '箭头',
-    icon: 'icon-arrdown',
-    type: 'arrows',
-  },
-  {
-    name: '文本',
-    icon: 'icon-wenben',
-    type: 'text',
-  },
-  {
     name: '圆形',
     icon: 'icon-24gf-circle',
     type: 'circle',
-  },
-  {
-    name: '圆环',
-    icon: 'icon-yuanhuan',
-    type: 'angular',
-  },
-
-  {
-    name: '五边形',
-    icon: 'icon-five-shape',
-    type: 'pentagon',
   },
   {
     name: '六边形',
@@ -68,10 +47,5 @@ export const componentShapeList: IComponentShape[] = [
     name: '心形',
     icon: 'icon-heart-3-fill',
     type: 'heart',
-  },
-  {
-    name: '五边形',
-    icon: 'icon-five-shape',
-    type: 'rect',
   },
 ]
