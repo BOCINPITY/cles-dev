@@ -1,14 +1,16 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { MapModule } from './map/map.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { QtmapModule } from './qtmap/qtmap.module';
+import { PathModule } from './path/path.module';
+
 @Module({
   controllers: [AppController],
-  providers: [AppService],
+  providers: [],
   imports: [
     MongooseModule.forRoot('mongodb://120.26.238.102:27017/mogotest', {}),
-    MapModule,
+    QtmapModule,
+    PathModule,
   ],
 })
 export class AppModule {}
