@@ -1,29 +1,87 @@
-import type Konva from 'konva'
-
 export type IComponentShapeType =
-  | 'rect' // 矩形
-  | 'parallelogran' // 平行四边形
-  | 'rhombus' // 菱形
-  | 'arrows' // 箭头
-  | 'text' // 文本
+  | 'rectangle' // 矩形
   | 'circle' // 圆形
-  | 'angular' // 圆环
-  | 'hexagon' // 六边形
-  | 'fivestar' // 五角星
-  | 'trapezium' // 梯形
-  | 'fan' // 扇形
-  | 'heart' // 心形
-
-type dafaultConfig =
-  | Konva.RectConfig // 矩形
-  | Konva.ParallelogramConfig // 平行四边形
-  | Konva.RhombusConfig // 菱形
-  | Konva.ArrowConfig // 箭头
-  | Konva.TextConfig // 文本
-  | Konva.CircleConfig // 圆形
-  | Konva.ArcConfig // 圆环
 export interface IComponentShape {
   name: string
   icon: string
   type: IComponentShapeType
+}
+
+export interface CircleConfig {
+  type: 'circle'
+  x: number
+  y: number
+  radius: number
+  fill: string
+  stroke: string
+  strokeWidth: number
+  draggable: boolean
+  isDragging: boolean
+}
+
+export interface INode {
+  type?: IComponentShapeType | undefined
+  x: number
+  y: number
+  width?: number
+  height?: number
+  radius?: number
+  fill: string
+  stroke: string
+  strokeWidth: number
+  draggable: boolean
+  isDragging: boolean
+}
+
+export interface RectangleConfig {
+  type: 'rectangle'
+  x: number
+  y: number
+  width: number
+  height: number
+  fill: string
+  stroke: string
+  strokeWidth: number
+  draggable: boolean
+  isDragging: boolean
+}
+type Obstacles = CircleConfig | RectangleConfig
+
+//地图相关
+export interface MapData {
+  name?: string
+  width: number
+  height: number
+  obstacles: (CircleConfig | RectangleConfig)[]
+  start?: { x: number; y: number }
+  end?: { x: number; y: number }
+}
+
+export interface ResponseData<T> {
+  message: string
+  data: T
+  code?: number
+}
+export interface QTMapResponse {
+  _id: string
+  width: number
+  height: number
+  obstacles: Array<{
+    _id: string
+    shape: IComponentShapeType
+    x: number
+    y: number
+    radius?: number
+    width?: number
+    height?: number
+    fill: string
+    stroke: string
+    strokeWidth: number
+  }>
+}
+
+export interface QTMapListItem {
+  _id: string
+  width: number
+  height: number
 }

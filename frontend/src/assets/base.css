@@ -7,12 +7,14 @@
 }
 
 :root {
+  --primary-color: #0077ff;
+  --border-color: #aaa;
   --main-text-color: #000000;
   --sub-text-color: #666666;
   --primary-button-color: #000000;
   --secondary-button-color: #e0e0ff;
   --link-color: #000000;
-  --link-hover-color: #e0e0ff;
+  --link-hover-color: #00000011;
   --button-hover-color: #0077ff;
 }
 

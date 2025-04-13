@@ -12,27 +12,29 @@ export class QTMap extends Document {
   @Prop({
     type: [
       {
-        x: Number,
-        y: Number,
-        width: Number,
-        height: Number,
-        shape: String,
-        color: String,
-        scale: Number,
-        rotate: Number,
+        shape: { type: String, required: true }, // 表示形状（circle 或 rectangle）
+        x: { type: Number, required: true },
+        y: { type: Number, required: true },
+        radius: { type: Number, required: false },
+        width: { type: Number, required: false },
+        height: { type: Number, required: false },
+        fill: { type: String, required: true },
+        stroke: { type: String, required: true },
+        strokeWidth: { type: Number, required: true },
       },
     ],
     required: true,
   })
   obstacles: Array<{
+    shape: 'circle' | 'rectangle';
     x: number;
     y: number;
-    width: number;
-    height: number;
-    shape?: string;
-    color?: string;
-    scale?: number;
-    rotate?: number;
+    radius?: number;
+    width?: number;
+    height?: number;
+    fill: string;
+    stroke: string;
+    strokeWidth: number;
   }>;
 }
 

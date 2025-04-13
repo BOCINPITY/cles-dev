@@ -27,7 +27,7 @@ export class QtmapController {
     description: '创建新地图所需的数据。',
   })
   @ApiResponse({
-    status: 201,
+    status: 200,
     description: '地图已成功创建。',
   })
   @ApiResponse({ status: 400, description: '输入数据无效。' })
