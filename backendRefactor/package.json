@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "clesbit <208023732@qq.com> (https://clesbit.com/)",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "koa": "^2.16.1",
+    "koa-bodyparser": "^4.4.1",
+    "koa-router": "^13.0.1",
+    "mysql2": "^3.14.0",
+    "sequelize": "^6.37.7"
+  }
+}
