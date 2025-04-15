@@ -4,10 +4,12 @@ const Map = require('./model/mapModel');
 
 const syncModels = async () => {
     try {
-        await sequelize.sync({ alter: true });
-        console.log('All models were synchronized successfully.');
+        console.info('模型正在同步...');
+        // Disable logging
+        await sequelize.sync({ alter: true, logging: false });
+        console.info('模型同步完成！！！');
     } catch (error) {
-        console.error('Error synchronizing models:', error);
+        console.error('模型同步失败', error);
     }
 };
 

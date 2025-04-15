@@ -1,27 +1,15 @@
 const Router = require('koa-router');
-const User = require('../model/userModel');
+const userController = require('../controllers/userController');
+const router = new Router({ prefix: '/users' });
 
-const router = new Router();
+router.post('/', userController.createUser);
 
-router.get('/', async (ctx) => {
-    try {
-        const users = await User.findAll();
-        ctx.body = users;
-    } catch (err) {
-        ctx.status = 500;
-        ctx.body = { error: 'Failed to fetch users' };
-    }
-});
+router.get('/', userController.getUsers);
 
-router.post('/', async (ctx) => {
-    try {
-        const newUser = await User.create(ctx.request.body);
-        ctx.status = 201;
-        ctx.body = newUser;
-    } catch (err) {
-        ctx.status = 400;
-        ctx.body = { error: 'Failed to create user' };
-    }
-});
+router.get('/:id', userController.getUserById);
+
+router.put('/:id', userController.updateUser);
+
+router.delete('/:id', userController.deleteUser);
 
 module.exports = router;
